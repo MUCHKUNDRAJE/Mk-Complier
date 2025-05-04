@@ -78,7 +78,33 @@ void generateStatement(char* buffer, ASTNode* node) {
                         break;
                     case AST_PRINT_STRING_EXPRESSION:
                         snprintf(innerLine, sizeof(innerLine), "        printf(\"%%s%%s\\n\", \"%s\", %s);\n", node->body->left, node->body->right);
+                        break;  
+                    default:
+                        innerLine[0] = '\0'; // Empty
+                }
+                strcat(buffer, innerLine);
+            }
+            strcat(buffer, "    }\n");
+            return;
+
+            case AST_FOR_STATEMENT:
+            snprintf(line, sizeof(line), "    for(int i = %s ; i <= %s ; i++){\n" , node->value, node->value2);
+            strcat(buffer, line);
+            if (node->body) { 
+                char innerLine[512];
+                switch (node->body->type) {
+                    case AST_PRINT_STATEMENT:
+                        snprintf(innerLine, sizeof(innerLine), "        printf(\"%%d\\n\", %s);\n", node->body->identifier);
                         break;
+                    case AST_PRINT_STRING:
+                        snprintf(innerLine, sizeof(innerLine), "        printf(\"%%s\\n\", \"%s\");\n", node->body->value);
+                        break;
+                    case AST_PRINT_EXPRESSION:
+                        snprintf(innerLine, sizeof(innerLine), "        printf(\"%%s%%d\\n\", \"%s\", %s);\n", node->body->left, node->body->right);
+                        break;
+                    case AST_PRINT_STRING_EXPRESSION:
+                        snprintf(innerLine, sizeof(innerLine), "        printf(\"%%s%%s\\n\", \"%s\", %s);\n", node->body->left, node->body->right);
+                        break;  
                     default:
                         innerLine[0] = '\0'; // Empty
                 }

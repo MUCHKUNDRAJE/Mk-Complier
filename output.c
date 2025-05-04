@@ -1,9 +1,12 @@
   #include <stdio.h>
 
 int main() {
-    int x = 27;
     char string[] = "Muchkud";
-    printf("%s\n", "what was the date today");
+    int x = 0;
+    int i = 0;
+    for(int i = i ; i <= 4 ; i++){
+        printf("%d\n", i);
+    }
     return 0;
 }
  

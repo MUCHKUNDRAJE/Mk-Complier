@@ -79,6 +79,15 @@ Token *tokenize(const char *src)
             }
             else if(strcmp(buffer, "else") == 0)   {
                 addToken(&head, createToken(TOKEN_ELSE, buffer));
+            } 
+            else if(strcmp(buffer, "for") == 0)   {
+                addToken(&head, createToken(TOKEN_FOR, buffer));
+            } else if(strcmp(buffer, "starts") == 0)   {
+                addToken(&head, createToken(TOKEN_START, buffer));
+            } else if(strcmp(buffer, "form") == 0)   {
+                addToken(&head, createToken(TOKEN_FORM, buffer));
+            } else if(strcmp(buffer, "to") == 0)   {
+                addToken(&head, createToken(TOKEN_TO, buffer));
             }
             else
                 addToken(&head, createToken(TOKEN_IDENTIFIER, buffer));

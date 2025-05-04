@@ -168,7 +168,51 @@ ASTNode* parseTokens(Token* tokens) {
                 else current->next = elseNode;
                 current = elseNode;
             
+        }else if (tokens->type == TOKEN_FOR) {
+            tokens = tokens->next;
+            tokens = tokens->next;
+            tokens = tokens->next;
+            const char* id1 = tokens->value;
+       
+            tokens = tokens->next; 
+            tokens = tokens->next; 
+            char* id2 = tokens->value;
+          
+
+
+              ASTNode* forNode = createASTNode(AST_FOR_STATEMENT, NULL , id1 , id2, TYPE_INT);
+
+            tokens = tokens->next; // Move to inner LET or PRINT
+            tokens = tokens->next; 
+
+            if (tokens->type == TOKEN_PRINT) {
+                tokens = tokens->next; // (
+                tokens = tokens->next;
+                ASTNode* printNode = NULL;
+
+                if (tokens->type == TOKEN_IDENTIFIER) {
+                    printNode = createASTNode(AST_PRINT_STATEMENT, tokens->value, NULL, NULL, TYPE_INT);
+                    tokens = tokens->next;
+                } else if (tokens->type == TOKEN_STRING) {
+                    printNode = createASTNode(AST_PRINT_STRING, NULL, tokens->value, NULL, TYPE_STRING);
+                    tokens = tokens->next;
+                }
+
+                forNode->body = printNode;
+            }
+
+           
+         
+
+            // Attach to the last IF
+            
+                // orphan else; treat as separate node
+                if (!head) head = forNode;
+                else current->next = forNode;
+                current = forNode;
+            
         }
+
 
 
         if (tokens) tokens = tokens->next;

@@ -20,6 +20,10 @@ typedef enum {
     TOKEN_THAN,
     TOKEN_IF,
     TOKEN_ELSE,
+    TOKEN_FOR,
+    TOKEN_START,
+    TOKEN_FORM,
+    TOKEN_TO,
     TOKEN_SEMICOLON,//8
     TOKEN_UNKNOWN//9
 } TokenType;
