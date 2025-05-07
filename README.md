@@ -7,10 +7,11 @@ This is the official compiler for **Muchku**, a custom programming language buil
 
 
 ----
+# Structure
 <img width="4013" alt="shapes at 25-05-07 19 44 45" src="https://github.com/user-attachments/assets/bb1f5a04-0a6c-49ff-a36d-2dad340d0fd7" />
 
 ---
-✨ Features
+# ✨ Features
 - Lexical analysis (tokenization)
 - Parsing into AST (Abstract Syntax Tree)
 - Code generation into executable instructions
@@ -18,7 +19,7 @@ This is the official compiler for **Muchku**, a custom programming language buil
 - Supports basic language constructs (e.g., print, variables, arithmetic , if and for)
 
 ---
-  🧠 Learning Goals
+# 🧠 Learning Goals
 This project was built to understand:
 - Compiler architecture
 - Lexers and parsers
@@ -27,7 +28,7 @@ This project was built to understand:
 
 ---
 
-🛠 Dependencies
+# 🛠 Dependencies
 C Compiler (e.g., GCC)
 
 POSIX-compliant terminal (Linux, macOS) or Git Bash/WSL (Windows)
