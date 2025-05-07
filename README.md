@@ -1,5 +1,5 @@
 # 🐾 Muchku Language Compiler
-<img src="https://github.com/user-attachments/assets/3025ca01-97fa-4d2d-9d5a-05c34ceb12cd" alt="MK" width="100" height="100" style="border-radius: 10% ;" />
+<img src="https://github.com/user-attachments/assets/3025ca01-97fa-4d2d-9d5a-05c34ceb12cd" alt="MK" width="150" height="150" style="border-radius: 10% ;" />
 
 
 This is the official compiler for **Muchku**, a custom programming language built in C. Muchku is a toy language created for learning how compilers work — from **lexing** to **parsing**, **code generation**, and execution.
